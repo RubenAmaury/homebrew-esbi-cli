@@ -6,18 +6,19 @@ class EsbiCli < Formula
   homepage "https://github.com/RubenAmaury/esbi-cli"
   # A git url, not a tarball: it also works while the repository is private (git uses your credentials)
   url "https://github.com/RubenAmaury/esbi-cli.git",
-      tag:      "v0.2.1",
-      revision: "1fef72304fddc9d6c9671d1333ce4e23ffa7bff7"
+      tag:      "v0.3.0",
+      revision: "d00694a57734711b31da4b5a5c9885e28be65a0d"
   license "MIT"
   head "https://github.com/RubenAmaury/esbi-cli.git", branch: "main"
 
   include Language::Python::Virtualenv
 
+  depends_on macos: :ventura # pypdfium2 ships wheels for macOS 13 and later
   depends_on "python@3.13"
 
   def install
     venv = virtualenv_create(libexec, "python3.13")
-    # Dependencies come from PyPI as wheels (pymupdf and lxml are not built from source here)
+    # Dependencies come from PyPI as wheels (pypdfium2 and lxml are not built from source here)
     system libexec/"bin/python", "-m", "pip", "install", "--no-cache-dir", buildpath
     bin.install_symlink libexec/"bin/sb"
   end
