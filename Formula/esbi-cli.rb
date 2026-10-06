@@ -6,8 +6,8 @@ class EsbiCli < Formula
   homepage "https://github.com/RubenAmaury/esbi-cli"
   # A git url, not a tarball: it also works while the repository is private (git uses your credentials)
   url "https://github.com/RubenAmaury/esbi-cli.git",
-      tag:      "v0.3.1",
-      revision: "edd78bcb3699d27d2a26bb962516212e983f4fd7"
+      tag:      "v0.4.0",
+      revision: "722eb21c2dcb014ef02c7ad0e018d2983e6c3bfe"
   license "MIT"
   head "https://github.com/RubenAmaury/esbi-cli.git", branch: "main"
 
